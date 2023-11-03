@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://6iq04s8u0ia7"]
+[gd_scene load_steps=7 format=3 uid="uid://6iq04s8u0ia7"]
 
 [ext_resource type="Texture2D" uid="uid://chlxsf6k14o7" path="res://assets/tilesets/temple.png" id="1_260da"]
 [ext_resource type="PackedScene" uid="uid://bdn1l7odndadn" path="res://game/jump_n_run/player.tscn" id="2_3tveo"]
@@ -396,6 +396,9 @@ terrain_set_0/terrain_0/name = "Wall"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_nd4wj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5305m"]
+size = Vector2(96, 106)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -409,4 +412,8 @@ position = Vector2(-1, -9)
 [node name="Dialogs" type="Node" parent="."]
 
 [node name="PlayOnEnter" parent="Dialogs" instance=ExtResource("3_tbdmx")]
-position = Vector2(-216, 10)
+position = Vector2(206, 10)
+dialog_name = "test_timeline"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogs/PlayOnEnter"]
+shape = SubResource("RectangleShape2D_5305m")
