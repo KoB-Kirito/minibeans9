@@ -9,9 +9,9 @@
 },
 "default_portrait": "default",
 "description": "",
-"display_name": "test_character",
+"display_name": "Bun",
 "mirror": false,
-"nicknames": ["Bun"],
+"nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
 "default": {
