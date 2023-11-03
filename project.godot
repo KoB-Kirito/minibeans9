@@ -11,10 +11,22 @@ config_version=5
 [application]
 
 config/name="miniBeansJam9"
+run/main_scene="res://game/jump_n_run/test_level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://global_scripts/globals.gd"
+Events="*res://global_scripts/events.gd"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=544
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
