@@ -35,6 +35,7 @@ layout/default_style="Default"
 
 window/size/viewport_width=960
 window/size/viewport_height=544
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
