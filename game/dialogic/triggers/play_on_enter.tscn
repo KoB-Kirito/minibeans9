@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c86l4nqujgvnv"]
+
+[ext_resource type="Script" path="res://game/dialogic/triggers/play_on_enter.gd" id="1_evdsl"]
+
+[node name="PlayOnEnter" type="Area2D"]
+script = ExtResource("1_evdsl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

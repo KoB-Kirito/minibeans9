@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://6iq04s8u0ia7"]
+[gd_scene load_steps=6 format=3 uid="uid://6iq04s8u0ia7"]
 
 [ext_resource type="Texture2D" uid="uid://chlxsf6k14o7" path="res://assets/tilesets/temple.png" id="1_260da"]
 [ext_resource type="PackedScene" uid="uid://bdn1l7odndadn" path="res://game/jump_n_run/player.tscn" id="2_3tveo"]
+[ext_resource type="PackedScene" uid="uid://c86l4nqujgvnv" path="res://game/dialogic/triggers/play_on_enter.tscn" id="3_tbdmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd4wj"]
 texture = ExtResource("1_260da")
@@ -404,3 +405,8 @@ layer_0/tile_data = PackedInt32Array(458765, 65539, 5, 393229, 65539, 5, 327693,
 
 [node name="Player" parent="." instance=ExtResource("2_3tveo")]
 position = Vector2(-1, -9)
+
+[node name="Dialogs" type="Node" parent="."]
+
+[node name="PlayOnEnter" parent="Dialogs" instance=ExtResource("3_tbdmx")]
+position = Vector2(-216, 10)
