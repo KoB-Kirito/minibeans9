@@ -54,6 +54,16 @@
 "scale": 1,
 "scene": ""
 },
+"NotTalking": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Gray.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Sad": {
 "export_overrides": {
 "image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Sad.png\""

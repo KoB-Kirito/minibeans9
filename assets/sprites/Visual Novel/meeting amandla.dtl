@@ -1,0 +1,27 @@
+join Robin (Neutral) 2
+Robin: It's so hard to keep on going.
+Robin: Everything is hopeless. I am hopeless.
+Robin (Sad): And alone.
+Robin (Sad): I can't go on anymore. I don't want to go on anymore.
+join Robin (Sad) 1
+strength: Hey Robin...
+join strength (neutral) 3
+strength (neutral): Keep your head held up high.
+strength (neutral): I understand how you feel. I always have. 
+But remember\: I am always here for you. Even in your darkest times.
+Robin (Sad): It's just so difficult.
+Robin (Sad): I feel like I'm drowning in this darkness and chaos, without a chance to find a way out.
+strength (neutral): I know it’s tough, but if you stop for a moment and listen deeply to yourself, you know I am there. 
+strength (neutral): I will step forward and we will fight our way out of \
+this. 
+Robin (Sad): I guess you’re right.
+Robin (Sad): There were times I thought I couldn’t make it, but we did.
+strength (happy): Exactly! We always had the power within to overcome the darkness and chaos. And so we will do it this time.
+Robin (Neutral): Thank you for being here and reminding me that I am not alone.
+strength (neutral): You are never alone, Robin.
+strength (neutral): We will face the darkness together and we will find the light at the end of the tunnel.
+strength (neutral): Slowly, but surely, the darkness will recede. 
+Robin (Happy): I believe in us, in our strength.
+Robin (Happy): Let's face this together and come out even stronger on the other side.\
+
+strength (happy): That's the spirit, Robin. We're an unstoppable team, and there's nothing we can't overcome together.
