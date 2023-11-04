@@ -11,13 +11,13 @@ var transformed: bool = false
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	update_animation()
 	update_facing_direction()
 
 
 func update_animation() -> void:
-	animation_tree.set("parameters/Move/blend_position", velocity.x)
+	animation_tree.set("parameters/Move/blend_position:x", velocity.x)
 
 
 func update_facing_direction() -> void:

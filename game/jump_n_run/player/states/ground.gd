@@ -8,7 +8,7 @@ extends State
 @export var jump_strength: float = 400.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not player.is_on_floor():
 		state_machine.change_state(%Jumping)
 		return
