@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vk3qpj7kek1p"
-path="res://.godot/imported/lvl 1 tileset.png-baf45837ecc56223cfe73a745c0e6767.ctex"
+uid="uid://bmrw6qu3w75fq"
+path="res://.godot/imported/4.png-e414c1cfd58472d4becd23e53cdbeccd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/lvl 1 tileset.png"
-dest_files=["res://.godot/imported/lvl 1 tileset.png-baf45837ecc56223cfe73a745c0e6767.ctex"]
+source_file="res://assets/sprites/Jump n Run/background/4.png"
+dest_files=["res://.godot/imported/4.png-e414c1cfd58472d4becd23e53cdbeccd.ctex"]
 
 [params]
 

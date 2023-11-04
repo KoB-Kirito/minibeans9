@@ -265,8 +265,6 @@ graph_offset = Vector2(67.6998, 0)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xgqfr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -17)
 texture = ExtResource("2_r6s13")

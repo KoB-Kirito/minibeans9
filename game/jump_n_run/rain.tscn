@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://e1o1vis5qxpt"]
+
+[sub_resource type="Gradient" id="Gradient_ls2hx"]
+offsets = PackedFloat32Array(0, 0.991803)
+colors = PackedColorArray(0.737255, 0.741176, 0.545098, 1, 0.937255, 0.945098, 0.929412, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jan5o"]
+gradient = SubResource("Gradient_ls2hx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qdrhy"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(477, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(477, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 30, 0)
+color_ramp = SubResource("GradientTexture1D_jan5o")
+
+[node name="Rain" type="GPUParticles2D"]
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_qdrhy")
+lifetime = 6.0
+visibility_rect = Rect2(0, 0, 955, 544)
+local_coords = true
