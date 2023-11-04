@@ -1,0 +1,79 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"color": Color(0.505882, 0.352941, 0.592157, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Neutral",
+"description": "",
+"display_name": "Robin",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Angry.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Confused": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Confused.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Happy.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Neutral.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Sad.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprised": {
+"export_overrides": {
+"image": "\"res://assets/sprites/Visual Novel/Robin (Main)/VN_Robin_Surprised.png\""
+},
+"image": "",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}
