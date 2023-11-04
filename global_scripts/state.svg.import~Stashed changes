@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8kw2ndy4txg0"
-path="res://.godot/imported/robinfalldown.png-5c62a137db6bc21ca6027a19ece4b2ec.ctex"
+uid="uid://bv286msipvc5"
+path="res://.godot/imported/state.svg-6ca3f09c9a1c0bc95248d7f7a550d689.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Jump n Run/Robin (Main)/robinfalldown.png"
-dest_files=["res://.godot/imported/robinfalldown.png-5c62a137db6bc21ca6027a19ece4b2ec.ctex"]
+source_file="res://global_scripts/state.svg"
+dest_files=["res://.godot/imported/state.svg-6ca3f09c9a1c0bc95248d7f7a550d689.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

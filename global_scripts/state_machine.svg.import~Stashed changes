@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uam88o1lhrcn"
-path="res://.godot/imported/robinrun1.png-3890b2e2073bee0ceea2ac8d18cc1c07.ctex"
+uid="uid://dr6ygulli7aqb"
+path="res://.godot/imported/state_machine.svg-b080fc4f970d9532a049a21f8d4e42c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Jump n Run/Robin (Main)/robinrun1.png"
-dest_files=["res://.godot/imported/robinrun1.png-3890b2e2073bee0ceea2ac8d18cc1c07.ctex"]
+source_file="res://global_scripts/state_machine.svg"
+dest_files=["res://.godot/imported/state_machine.svg-b080fc4f970d9532a049a21f8d4e42c1.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
