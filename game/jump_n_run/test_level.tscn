@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://df2ccw3xwwlst" path="res://assets/sprites/Jump n Run/background/3.png" id="4_4snbi"]
 [ext_resource type="Texture2D" uid="uid://bmrw6qu3w75fq" path="res://assets/sprites/Jump n Run/background/4.png" id="5_e6c56"]
 [ext_resource type="Texture2D" uid="uid://b76weaxqmliag" path="res://assets/sprites/Jump n Run/background/5.png" id="6_lchrh"]
-[ext_resource type="PackedScene" path="res://game/jump_n_run/rain.tscn" id="7_ct034"]
 [ext_resource type="Texture2D" uid="uid://cjj484a748ts2" path="res://assets/tilesets/lvl_1_tileset.png" id="7_spp0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_765na"]
