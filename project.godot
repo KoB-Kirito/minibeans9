@@ -30,6 +30,7 @@ layout/styles={
 }
 }
 layout/default_style="Default"
+glossary/default_case_sensitive=true
 
 [display]
 
