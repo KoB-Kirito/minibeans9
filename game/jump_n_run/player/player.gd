@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var double_jumps: int = 1
 
 var current_jumps: int = 0
+var transformed: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree

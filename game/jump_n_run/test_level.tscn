@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://6iq04s8u0ia7"]
+[gd_scene load_steps=15 format=3 uid="uid://6iq04s8u0ia7"]
 
 [ext_resource type="Texture2D" uid="uid://chlxsf6k14o7" path="res://assets/tilesets/temple.png" id="1_260da"]
 [ext_resource type="Texture2D" uid="uid://b18iqm6q2bfwm" path="res://assets/sprites/Jump n Run/background/bg1.png" id="1_u1yhv"]
@@ -621,9 +621,6 @@ motion_mirroring = Vector2(955, 0)
 
 [node name="Bg6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 texture = ExtResource("6_lchrh")
-
-[node name="Rain" parent="." instance=ExtResource("7_ct034")]
-preprocess = 5.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_s4ti0")
