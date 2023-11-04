@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _enter_state() -> void:
-	pass
+	player.animation_tree.set("parameters/conditions/falling", true)
 
 
 func _exit_state() -> void:
-	pass
+	player.animation_tree.set("parameters/conditions/falling", false)

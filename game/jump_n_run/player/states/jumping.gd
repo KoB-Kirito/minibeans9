@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _enter_state() -> void:
-	player.animation_tree.state
+	player.animation_tree.set("parameters/conditions/jumping", true)
 
 
 func _exit_state() -> void:
-	pass
+	player.animation_tree.set("parameters/conditions/jumping", false)
