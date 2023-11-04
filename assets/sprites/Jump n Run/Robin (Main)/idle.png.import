@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn7yc1n1rhgay"
-path="res://.godot/imported/robinidle.png-a68b68043eee88de447f0d956b7ecdd2.ctex"
+uid="uid://ht0kski0kgkk"
+path="res://.godot/imported/idle.png-fd4b30c3528e5f2767fb92132a044569.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Jump n Run/Robin (Main)/robinidle.png"
-dest_files=["res://.godot/imported/robinidle.png-a68b68043eee88de447f0d956b7ecdd2.ctex"]
+source_file="res://assets/sprites/Jump n Run/Robin (Main)/idle.png"
+dest_files=["res://.godot/imported/idle.png-fd4b30c3528e5f2767fb92132a044569.ctex"]
 
 [params]
 
