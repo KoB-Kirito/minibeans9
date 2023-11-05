@@ -18,7 +18,7 @@ func _enter_state() -> void:
 	if animation_state_machine == null:
 		animation_state_machine = player.animation_tree["parameters/playback"]
 	
-	animation_state_machine.stop()
+	#animation_state_machine.stop()
 	
 	if player.transformed:
 		player.transformed = false

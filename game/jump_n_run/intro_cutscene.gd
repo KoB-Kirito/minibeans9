@@ -9,7 +9,12 @@ func _ready() -> void:
 	await get_tree().create_timer(3).timeout
 	
 	Dialogic.signal_event.connect(dialogic_signal)
+	Dialogic.timeline_ended.connect(show_healthbar)
 	Dialogic.start("Opening Scene")
+
+
+func show_healthbar() -> void:
+	$"../CanvasLayer/Healtbar".show()
 
 
 func dialogic_signal(name: String) -> void:

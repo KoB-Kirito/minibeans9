@@ -21,6 +21,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	update_animation()
 	update_facing_direction()
+	
+	if Input.is_action_just_pressed("reset"):
+		print("reset")
+		animation_tree.active = true
+		animation_tree["parameters/playback"].start("move", true)
+		$StateMachine.change_state(%Ground)
 
 
 func update_animation() -> void:
