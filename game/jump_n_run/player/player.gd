@@ -45,6 +45,10 @@ func update_facing_direction() -> void:
 
 func hurt(amount: int) -> void:
 	print("player hurt for ", amount)
+	
+	health -= amount
+	Events.healthchanged.emit(health)
+	
 	animation_tree.active = false
 	animation_player.play("hurt", transformed)
 	animation_player.animation_finished.connect(func(name): animation_tree.active = true, CONNECT_ONE_SHOT)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://casn78pyx24h0"]
+[gd_scene load_steps=20 format=3 uid="uid://casn78pyx24h0"]
 
+[ext_resource type="Script" path="res://game/jump_n_run/level1.gd" id="1_76eh7"]
 [ext_resource type="Texture2D" uid="uid://cu0xqbq1p1pfd" path="res://assets/sprites/Jump n Run/background/1.png" id="1_p8smw"]
 [ext_resource type="Texture2D" uid="uid://bbvkrj0sn5xtm" path="res://assets/sprites/Jump n Run/background/2.png" id="2_ihghp"]
 [ext_resource type="Texture2D" uid="uid://df2ccw3xwwlst" path="res://assets/sprites/Jump n Run/background/3.png" id="3_8nbkt"]
@@ -394,10 +395,16 @@ size = Vector2(96, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4doj"]
 size = Vector2(20, 94)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv2wm"]
+size = Vector2(90, 91)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjpx"]
 size = Vector2(150, 20)
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("player", "boss")]
+script = ExtResource("1_76eh7")
+player = NodePath("Player")
+boss = NodePath("Boss")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(480, 272)
@@ -465,6 +472,14 @@ dialog_name = "before the boss"
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_r4doj")
 
+[node name="MeetingAmanda" parent="Dialogs" instance=ExtResource("8_noqq7")]
+position = Vector2(4694, 377)
+dialog_name = "meeting amandla"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogs/MeetingAmanda"]
+position = Vector2(-3, -9.5)
+shape = SubResource("RectangleShape2D_tv2wm")
+
 [node name="Enemy" parent="." instance=ExtResource("9_n7dly")]
 position = Vector2(715, 509)
 
@@ -479,6 +494,8 @@ shape = SubResource("RectangleShape2D_qyjpx")
 
 [node name="Boss" parent="." instance=ExtResource("11_g6rhg")]
 position = Vector2(12871, 456)
+health = 50
+speed = 50.0
 
 [node name="Enemy2" parent="." instance=ExtResource("9_n7dly")]
 position = Vector2(9973, 436)

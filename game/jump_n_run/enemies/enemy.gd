@@ -1,6 +1,9 @@
 class_name Enemy
 extends CharacterBody2D
 
+signal died
+
+
 enum {WALK, ATTACK, DEAD}
 var state = WALK
 
@@ -70,4 +73,5 @@ func hurt(amount: int) -> void:
 
 
 func remove() -> void:
+	died.emit()
 	queue_free()
