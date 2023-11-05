@@ -22,8 +22,10 @@ func _enter_state() -> void:
 	
 	if player.transformed:
 		player.transformed = false
+		player.double_jumps = 1
 	else:
 		player.transformed = true
+		player.double_jumps = 0
 	
 	player.animation_tree.animation_finished.connect(go_back)
 	animation_state_machine.start("switch", true)

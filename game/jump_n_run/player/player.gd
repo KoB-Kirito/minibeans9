@@ -11,6 +11,7 @@ var transformed: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -40,3 +41,13 @@ func update_facing_direction() -> void:
 		sprite.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
+
+
+func hurt(amount: int) -> void:
+	print("player hurt for ", amount)
+	animation_player.play("hurt", transformed)
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		hurt(body.damage)

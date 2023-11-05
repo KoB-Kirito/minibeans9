@@ -17,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 		state_machine.change_state(%Switching)
 		return
 	
-	if Input.is_action_just_pressed("attack"):
+	if player.transformed and Input.is_action_just_pressed("attack"):
 		state_machine.change_state(%Attacking)
 		return
 	

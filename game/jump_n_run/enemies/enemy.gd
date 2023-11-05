@@ -7,6 +7,7 @@ var state = WALK
 @export var health: int = 20
 @export var speed = 20.0
 @export var gravity: int = 960
+@export var damage: int = 10
 
 var player: Player
 
@@ -30,10 +31,10 @@ func _physics_process(delta: float) -> void:
 			else:
 				sprite.play("walk")
 			
-			if player.position.x < position.x:
+			if player.position.x < position.x - 20:
 				velocity.x = -speed
 				ancor.scale.x = 1
-			else:
+			elif player.position.x > position.x + 20:
 				velocity.x = speed
 				ancor.scale.x = -1
 	
