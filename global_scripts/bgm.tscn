@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://coo1r856fbkcu"]
+[gd_scene load_steps=3 format=3 uid="uid://coo1r856fbkcu"]
 
 [ext_resource type="Script" path="res://global_scripts/bgm.gd" id="1_a7722"]
+[ext_resource type="AudioStream" uid="uid://bq75pf272c3qh" path="res://assets/sounds/strange_moon.ogg" id="2_3k2ty"]
 
 [node name="Bgm" type="Node"]
 script = ExtResource("1_a7722")
 
 [node name="player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3k2ty")
+volume_db = -4.6
