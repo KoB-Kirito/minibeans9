@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bv7ietfrd8hk3"]
+
+[ext_resource type="Script" path="res://game/menu/main_menu.gd" id="1_gnekq"]
+[ext_resource type="Texture2D" uid="uid://bpd8ycdxbrkkq" path="res://assets/ui/IMG_1687.png" id="2_cf5o4"]
+[ext_resource type="Texture2D" uid="uid://bobpjyd1g548a" path="res://assets/ui/Startbutton normal.png" id="3_m1k58"]
+[ext_resource type="Texture2D" uid="uid://bvw23yv2nacbe" path="res://assets/ui/Startbutton _selected.png" id="4_ljss5"]
+[ext_resource type="Texture2D" uid="uid://bqqdx4n4quq5o" path="res://assets/ui/settings normal.png" id="4_t0hno"]
+[ext_resource type="Texture2D" uid="uid://dcicmilj50syh" path="res://assets/ui/credits normal.png" id="5_sclym"]
+[ext_resource type="Texture2D" uid="uid://bjph8ubl74n6i" path="res://assets/ui/options__selected.png" id="6_3rkb8"]
+[ext_resource type="Texture2D" uid="uid://b831g51ndcnw8" path="res://assets/ui/quit normal.png" id="6_er3uf"]
+[ext_resource type="Texture2D" uid="uid://cnwr8qdj6cv6t" path="res://assets/ui/credits _selected.png" id="8_w80fw"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gnekq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_cf5o4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 355.0
+offset_top = 170.0
+offset_right = 605.0
+offset_bottom = 262.0
+
+[node name="Start" type="TextureButton" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+texture_normal = ExtResource("3_m1k58")
+texture_pressed = ExtResource("4_ljss5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Settings" type="TextureButton" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+texture_normal = ExtResource("4_t0hno")
+texture_pressed = ExtResource("6_3rkb8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Credits" type="TextureButton" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_sclym")
+texture_pressed = ExtResource("8_w80fw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Quit" type="TextureButton" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+texture_normal = ExtResource("6_er3uf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

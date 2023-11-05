@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckdge4xxhpe83"]
+
+[ext_resource type="Texture2D" uid="uid://dvtjx4v24fauq" path="res://assets/ui/IMG_1688.png" id="1_52jp0"]
+[ext_resource type="Script" path="res://game/menu/settings.gd" id="1_do000"]
+[ext_resource type="Texture2D" uid="uid://ceavmdcge0j6i" path="res://assets/ui/IMG_1690.png" id="2_rn22u"]
+[ext_resource type="Texture2D" uid="uid://bcrey5ctyw1mr" path="res://assets/ui/Back _selected.png" id="4_dxy1k"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_do000")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_52jp0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 52.0
+offset_top = 419.0
+offset_right = 302.0
+offset_bottom = 499.0
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+texture_normal = ExtResource("2_rn22u")
+texture_pressed = ExtResource("4_dxy1k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 0
+offset_left = 282.0
+offset_top = 193.0
+offset_right = 682.0
+offset_bottom = 243.0
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer2"]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="TextureRect/VBoxContainer2"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+min_value = -30.0
+max_value = 6.0
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="TextureRect/VBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
