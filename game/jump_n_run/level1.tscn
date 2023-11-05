@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c86l4nqujgvnv" path="res://game/dialogic/triggers/play_on_enter.tscn" id="8_noqq7"]
 [ext_resource type="PackedScene" uid="uid://cmdj5ha1ms6me" path="res://game/jump_n_run/enemies/enemy.tscn" id="9_n7dly"]
 [ext_resource type="Script" path="res://game/jump_n_run/boss_cutscene.gd" id="10_pc7px"]
-[ext_resource type="PackedScene" path="res://game/jump_n_run/enemies/boss.tscn" id="11_g6rhg"]
+[ext_resource type="PackedScene" uid="uid://b44uq7f6yqayd" path="res://game/jump_n_run/enemies/boss.tscn" id="11_g6rhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ikkh"]
 texture = ExtResource("6_tcyw1")
