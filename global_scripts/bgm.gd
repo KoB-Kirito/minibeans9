@@ -5,7 +5,6 @@ extends Node
 
 
 func _ready() -> void:
-	player.stream = load("res://assets/sounds/bittersweet-eerie-horror-vocals-the-siren.ogg")
 	player.play()
 
 

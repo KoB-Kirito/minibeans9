@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="miniBeansJam9"
-run/main_scene="res://game/jump_n_run/level1.tscn"
+run/main_scene="res://game/menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://assets/ui/godot_splash.png"
 config/icon="res://icon.svg"
