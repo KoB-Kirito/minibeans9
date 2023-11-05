@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chlxsf6k14o7"
-path="res://.godot/imported/temple.png-125ac250a55fb21ff48ded1bc8e73148.ctex"
+uid="uid://ruk4r5y1mx01"
+path="res://.godot/imported/lvl1_final_wip.png-991993439f58f3fdecd75e0b7ca777ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/temple.png"
-dest_files=["res://.godot/imported/temple.png-125ac250a55fb21ff48ded1bc8e73148.ctex"]
+source_file="res://assets/tilesets/lvl1_final_wip.png"
+dest_files=["res://.godot/imported/lvl1_final_wip.png-991993439f58f3fdecd75e0b7ca777ee.ctex"]
 
 [params]
 
