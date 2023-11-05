@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://6iq04s8u0ia7"]
+[gd_scene load_steps=15 format=3 uid="uid://6iq04s8u0ia7"]
 
 [ext_resource type="Texture2D" uid="uid://chlxsf6k14o7" path="res://assets/tilesets/temple.png" id="1_260da"]
 [ext_resource type="PackedScene" uid="uid://bdn1l7odndadn" path="res://game/jump_n_run/player/player.tscn" id="2_3tveo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmrw6qu3w75fq" path="res://assets/sprites/Jump n Run/background/4.png" id="5_e6c56"]
 [ext_resource type="Texture2D" uid="uid://b76weaxqmliag" path="res://assets/sprites/Jump n Run/background/5.png" id="6_lchrh"]
 [ext_resource type="Texture2D" uid="uid://cjj484a748ts2" path="res://assets/tilesets/lvl_1_tileset.png" id="7_spp0m"]
+[ext_resource type="PackedScene" uid="uid://cmdj5ha1ms6me" path="res://game/jump_n_run/enemies/enemy.tscn" id="10_j0njo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_765na"]
 texture = ExtResource("7_spp0m")
@@ -634,3 +635,6 @@ dialog_name = "test_timeline"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogs/PlayOnEnter"]
 shape = SubResource("RectangleShape2D_5305m")
+
+[node name="Enemy" parent="." instance=ExtResource("10_j0njo")]
+position = Vector2(715, 509)

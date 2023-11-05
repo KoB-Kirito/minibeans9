@@ -17,6 +17,10 @@ func _physics_process(_delta: float) -> void:
 		state_machine.change_state(%Switching)
 		return
 	
+	if Input.is_action_just_pressed("attack"):
+		state_machine.change_state(%Attacking)
+		return
+	
 	# Jump
 	if Input.is_action_just_pressed("jump"):
 		player.velocity.y = -jump_strength

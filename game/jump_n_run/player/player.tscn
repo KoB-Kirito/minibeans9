@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bdn1l7odndadn"]
+[gd_scene load_steps=64 format=3 uid="uid://bdn1l7odndadn"]
 
 [ext_resource type="Script" path="res://game/jump_n_run/player/player.gd" id="1_xgqfr"]
 [ext_resource type="Texture2D" uid="uid://dbpr7esmf4k04" path="res://assets/sprites/Jump n Run/Robin (Main)/hurt.png" id="2_bkdqp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://game/jump_n_run/player/states/switching.gd" id="7_jdtsr"]
 [ext_resource type="Texture2D" uid="uid://p4686jihn2py" path="res://assets/sprites/Jump n Run/Robin (Main)/attack.png" id="7_ytjt8"]
 [ext_resource type="Script" path="res://game/jump_n_run/player/states/jumping.gd" id="8_4yhnc"]
+[ext_resource type="Script" path="res://game/jump_n_run/player/states/attacking.gd" id="11_glyjd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ijmm3"]
 radius = 7.0
@@ -667,6 +668,9 @@ _data = {
 "switch_red": SubResource("Animation_r1anp")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6j31"]
+animation = &"attack"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_avuov"]
 animation = &"fall"
 
@@ -770,21 +774,30 @@ advance_condition = &"grounded"
 advance_mode = 2
 advance_condition = &"falling"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ljoma"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8pa1a"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jwm8f"]
-states/End/position = Vector2(822, 151)
-states/Start/position = Vector2(-75, 151)
+states/End/position = Vector2(1521, 140)
+states/Start/position = Vector2(-72, 221)
+states/attack/node = SubResource("AnimationNodeAnimation_o6j31")
+states/attack/position = Vector2(384, 354)
 states/fall/node = SubResource("AnimationNodeBlendSpace1D_d27se")
-states/fall/position = Vector2(584.7, 227)
+states/fall/position = Vector2(874.7, 379)
 states/jump/node = SubResource("AnimationNodeBlendSpace1D_owq8s")
-states/jump/position = Vector2(584.7, 38)
+states/jump/position = Vector2(874.7, 31)
 states/move/node = SubResource("AnimationNodeBlendSpace2D_8sc1x")
-states/move/position = Vector2(384, 151)
+states/move/position = Vector2(384, 221)
 states/switch/node = SubResource("AnimationNodeBlendSpace1D_5pde1")
 states/switch/position = Vector2(384, 62)
-transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_44s0b"), "move", "switch", SubResource("AnimationNodeStateMachineTransition_8b2h1"), "switch", "move", SubResource("AnimationNodeStateMachineTransition_6mpyw"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_w86yk"), "jump", "move", SubResource("AnimationNodeStateMachineTransition_tnnh1"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_4ctc8"), "fall", "jump", SubResource("AnimationNodeStateMachineTransition_gt41s"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_xe75c"), "move", "fall", SubResource("AnimationNodeStateMachineTransition_kuqlk")]
+transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_44s0b"), "move", "switch", SubResource("AnimationNodeStateMachineTransition_8b2h1"), "switch", "move", SubResource("AnimationNodeStateMachineTransition_6mpyw"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_w86yk"), "jump", "move", SubResource("AnimationNodeStateMachineTransition_tnnh1"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_4ctc8"), "fall", "jump", SubResource("AnimationNodeStateMachineTransition_gt41s"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_xe75c"), "move", "fall", SubResource("AnimationNodeStateMachineTransition_kuqlk"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_ljoma"), "attack", "move", SubResource("AnimationNodeStateMachineTransition_8pa1a")]
 graph_offset = Vector2(-172.106, -17)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjfic"]
+size = Vector2(40, 30)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_xgqfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -831,6 +844,17 @@ unique_name_in_owner = true
 script = ExtResource("7_jdtsr")
 player = NodePath("../..")
 
+[node name="Attacking" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("11_glyjd")
+player = NodePath("../..")
+
+[node name="Hitbox" type="Area2D" parent="StateMachine/Attacking"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StateMachine/Attacking/Hitbox"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_mjfic")
+
 [node name="Jumping" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("8_4yhnc")
@@ -841,3 +865,6 @@ unique_name_in_owner = true
 script = ExtResource("6_i4unm")
 player = NodePath("../..")
 gravity = 1600
+
+[connection signal="body_entered" from="StateMachine/Attacking/Hitbox" to="StateMachine/Attacking" method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="StateMachine/Attacking/Hitbox" to="StateMachine/Attacking" method="_on_hitbox_body_exited"]

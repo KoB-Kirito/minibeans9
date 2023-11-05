@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 
+@export var health: int = 100
+@export var stength: int = 10
 @export var double_jumps: int = 1
 
 var current_jumps: int = 0
