@@ -21,9 +21,15 @@ func _physics_process(delta: float) -> void:
 	# Gravity
 	player.velocity.y += gravity * delta
 	
+	if Globals.paused:
+		player.velocity.x = 0
+		player.move_and_slide()
+		return
+	
 	# Double Jump
 	if player.current_jumps < player.double_jumps and Input.is_action_just_pressed("jump"):
 		player.current_jumps += 1
+		%snd_jump.play()
 		player.velocity.y = -jump_strength
 	
 	# Movement

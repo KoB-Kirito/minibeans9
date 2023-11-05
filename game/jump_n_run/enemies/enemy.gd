@@ -20,6 +20,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Globals.paused:
+		return
+	
+	# pause enemy if far away
+	if position.distance_squared_to(player.position) > 12000000:
+		#print(position.distance_squared_to(player.position))
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

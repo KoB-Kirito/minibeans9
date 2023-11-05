@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bdn1l7odndadn"]
+[gd_scene load_steps=66 format=3 uid="uid://bdn1l7odndadn"]
 
 [ext_resource type="Script" path="res://game/jump_n_run/player/player.gd" id="1_xgqfr"]
 [ext_resource type="Texture2D" uid="uid://dbpr7esmf4k04" path="res://assets/sprites/Jump n Run/Robin (Main)/hurt.png" id="2_bkdqp"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://p4686jihn2py" path="res://assets/sprites/Jump n Run/Robin (Main)/attack.png" id="7_ytjt8"]
 [ext_resource type="Script" path="res://game/jump_n_run/player/states/jumping.gd" id="8_4yhnc"]
 [ext_resource type="Script" path="res://game/jump_n_run/player/states/attacking.gd" id="11_glyjd"]
+[ext_resource type="AudioStream" uid="uid://bufi17irmgowi" path="res://assets/sounds/jump.wav" id="14_chwbg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xci1y"]
+load_path = "res://.godot/imported/jump.png-70820c687e169771358184667f1f567c.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ijmm3"]
 radius = 7.0
@@ -242,7 +246,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_jq2ta"]
 resource_name = "hurt"
-length = 0.1
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -283,7 +287,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_lxrvr"]
 resource_name = "hurt_red"
-length = 0.1
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -403,9 +407,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [2, 3]
 }
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xci1y"]
-load_path = "res://.godot/imported/jump.png-70820c687e169771358184667f1f567c.ctex"
 
 [sub_resource type="Animation" id="Animation_1xo60"]
 resource_name = "jump"
@@ -805,7 +806,7 @@ script = ExtResource("1_xgqfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -17)
-texture = ExtResource("2_bkdqp")
+texture = SubResource("CompressedTexture2D_xci1y")
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -876,6 +877,11 @@ unique_name_in_owner = true
 script = ExtResource("6_i4unm")
 player = NodePath("../..")
 gravity = 1600
+
+[node name="snd_jump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_chwbg")
+volume_db = -6.8
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="StateMachine/Attacking/Hitbox" to="StateMachine/Attacking" method="_on_hitbox_body_entered"]

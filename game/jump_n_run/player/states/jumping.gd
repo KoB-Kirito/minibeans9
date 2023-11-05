@@ -10,6 +10,9 @@ extends State
 
 
 func _physics_process(delta: float) -> void:
+	if Globals.paused:
+		return
+	
 	if player.is_on_floor():
 		state_machine.change_state(%Ground)
 		return
@@ -23,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Double Jump
 	if player.current_jumps < player.double_jumps and Input.is_action_just_pressed("jump"):
+		%snd_jump.play()
 		player.current_jumps += 1
 		player.velocity.y = -jump_strength
 	
