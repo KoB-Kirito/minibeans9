@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvms5a0mjdrta"]
+
+[ext_resource type="Texture2D" uid="uid://okqsxj0u6j08" path="res://assets/ui/healthbarframe.png" id="1_dknjr"]
+[ext_resource type="Texture2D" uid="uid://ccy8oxh4kbfvc" path="res://assets/ui/healthbarfilling.png" id="2_tebim"]
+
+[node name="Healtbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+offset_left = 33.0
+offset_top = 26.0
+offset_right = 238.0
+offset_bottom = 71.0
+value = 100.0
+nine_patch_stretch = true
+texture_over = ExtResource("1_dknjr")
+texture_progress = ExtResource("2_tebim")
+tint_progress = Color(0.803922, 0.501961, 0.278431, 1)
