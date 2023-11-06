@@ -28,6 +28,7 @@ func _enter_state() -> void:
 	
 	player.animation_tree.animation_finished.connect(go_back)
 	animation_state_machine.start("attack", true)
+	%snd_jump.play()
 
 
 func _exit_state() -> void:

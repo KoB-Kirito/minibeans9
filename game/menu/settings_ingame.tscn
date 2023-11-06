@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dca2oky06d832"]
+[gd_scene load_steps=5 format=3 uid="uid://c7cgl1gxi1ujj"]
 
-[ext_resource type="Texture2D" uid="uid://dvtjx4v24fauq" path="res://assets/ui/IMG_1688.png" id="1_52jp0"]
-[ext_resource type="Script" path="res://game/menu/settings.gd" id="1_do000"]
-[ext_resource type="Texture2D" uid="uid://ceavmdcge0j6i" path="res://assets/ui/IMG_1690.png" id="2_rn22u"]
-[ext_resource type="Texture2D" uid="uid://bcrey5ctyw1mr" path="res://assets/ui/Back _selected.png" id="4_dxy1k"]
+[ext_resource type="Script" path="res://game/menu/settings_ingame.gd" id="1_lvaps"]
+[ext_resource type="Texture2D" uid="uid://dvtjx4v24fauq" path="res://assets/ui/IMG_1688.png" id="2_3l3vg"]
+[ext_resource type="Texture2D" uid="uid://ceavmdcge0j6i" path="res://assets/ui/IMG_1690.png" id="3_7w457"]
+[ext_resource type="Texture2D" uid="uid://bcrey5ctyw1mr" path="res://assets/ui/Back _selected.png" id="4_tfxut"]
 
-[node name="Settings" type="Control"]
+[node name="SettingsIngame" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_do000")
+script = ExtResource("1_lvaps")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_52jp0")
+texture = ExtResource("2_3l3vg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 custom_minimum_size = Vector2(250, 0)
@@ -31,9 +31,9 @@ offset_bottom = 499.0
 [node name="TextureButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
-texture_normal = ExtResource("2_rn22u")
-texture_pressed = ExtResource("4_dxy1k")
-texture_focused = ExtResource("4_dxy1k")
+texture_normal = ExtResource("3_7w457")
+texture_pressed = ExtResource("4_tfxut")
+texture_focused = ExtResource("4_tfxut")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -77,5 +77,4 @@ text = "Fullscreen"
 layout_mode = 2
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="value_changed" from="TextureRect/VBoxContainer3/VBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="TextureRect/VBoxContainer3/VBoxContainer3/CheckBox" to="." method="_on_check_box_toggled"]

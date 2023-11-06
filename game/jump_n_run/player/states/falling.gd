@@ -32,9 +32,9 @@ func _physics_process(delta: float) -> void:
 		%snd_jump.play()
 		player.velocity.y = -jump_strength
 	
-	# Movement
+	# Movement - stop movement if under the screen
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
+	if direction and position.y < 600:
 		player.velocity.x = direction * speed
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed)

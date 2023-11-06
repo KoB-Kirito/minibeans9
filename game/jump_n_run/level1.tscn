@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://casn78pyx24h0"]
+[gd_scene load_steps=24 format=3 uid="uid://casn78pyx24h0"]
 
 [ext_resource type="Script" path="res://game/jump_n_run/level1.gd" id="1_76eh7"]
 [ext_resource type="Texture2D" uid="uid://cu0xqbq1p1pfd" path="res://assets/sprites/Jump n Run/background/1.png" id="1_p8smw"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b44uq7f6yqayd" path="res://game/jump_n_run/enemies/boss.tscn" id="11_g6rhg"]
 [ext_resource type="Script" path="res://game/jump_n_run/intro_cutscene.gd" id="12_an6o0"]
 [ext_resource type="PackedScene" uid="uid://diybubuttdc04" path="res://assets/ui/healtbar.tscn" id="14_dut5u"]
+[ext_resource type="PackedScene" uid="uid://ds36p8hg0es3h" path="res://game/jump_n_run/enemies/enemy2.tscn" id="15_gbglx"]
+[ext_resource type="Script" path="res://game/jump_n_run/settings_layer.gd" id="16_qb8xm"]
+[ext_resource type="PackedScene" uid="uid://c7cgl1gxi1ujj" path="res://game/menu/settings_ingame.tscn" id="17_hrp10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ikkh"]
 texture = ExtResource("6_tcyw1")
@@ -494,7 +497,7 @@ position = Vector2(12111, 171)
 shape = SubResource("RectangleShape2D_qyjpx")
 
 [node name="Boss" parent="." instance=ExtResource("11_g6rhg")]
-position = Vector2(12871, 456)
+position = Vector2(12894, 467)
 health = 50
 speed = 50.0
 
@@ -534,5 +537,48 @@ position = Vector2(7455, 465)
 
 [node name="Enemy8" parent="." instance=ExtResource("9_n7dly")]
 position = Vector2(11583, 152)
+
+[node name="Enemy9" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(1617, 506)
+
+[node name="Enemy10" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(2594, 347)
+
+[node name="Enemy11" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(5120, 156)
+
+[node name="Enemy12" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(6235, 442)
+
+[node name="Enemy13" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(7624, 345)
+
+[node name="Enemy14" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(9117, 408)
+
+[node name="Enemy15" parent="." instance=ExtResource("9_n7dly")]
+position = Vector2(3521, 503)
+
+[node name="Enemy16" parent="." instance=ExtResource("9_n7dly")]
+position = Vector2(2261, 281)
+
+[node name="Enemy17" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(3384, 118)
+
+[node name="Enemy18" parent="." instance=ExtResource("9_n7dly")]
+position = Vector2(5666, 377)
+
+[node name="Enemy19" parent="." instance=ExtResource("9_n7dly")]
+position = Vector2(6857, 277)
+
+[node name="Enemy20" parent="." instance=ExtResource("9_n7dly")]
+position = Vector2(8425, 309)
+
+[node name="Enemy21" parent="." instance=ExtResource("15_gbglx")]
+position = Vector2(10561, 346)
+
+[node name="SettingsLayer" type="CanvasLayer" parent="."]
+script = ExtResource("16_qb8xm")
+settings_scene = ExtResource("17_hrp10")
 
 [connection signal="body_entered" from="BossCutscene/Area2D" to="BossCutscene" method="_on_area_2d_body_entered"]

@@ -13,13 +13,22 @@ var state = WALK
 @export var damage: int = 10
 
 var player: Player
+var player_in_attack_range: bool = false
 
 @onready var ancor: Node2D = $Ancor
 @onready var sprite: AnimatedSprite2D = $Ancor/AnimatedSprite2D
+@onready var attack_cooldown: Timer = $AttackCooldown
+@onready var area_2d: Area2D = $Ancor/Area2D
+@onready var ray_cast_2d: RayCast2D = $Ancor/RayCast2D
+@onready var snd_attack: AudioStreamPlayer2D = $snd_attack
+@onready var attack_sound_timer: Timer = $AttackSound
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	area_2d.body_entered.connect(on_area_2d_body_entered)
+	area_2d.body_exited.connect(on_area_2d_body_exited)
+	attack_sound_timer.timeout.connect(play_attack_sound)
 
 
 func _physics_process(delta: float) -> void:
@@ -27,16 +36,21 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# pause enemy if far away
-	if position.distance_squared_to(player.position) > 12000000:
+	var distance_to_player := position.distance_squared_to(player.position)
+	if distance_to_player > 1000000:
 		#print(position.distance_squared_to(player.position))
 		return
 	
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
 	match state:
 		WALK:
+			# attack
+			if distance_to_player < 4000 and attack_cooldown.time_left == 0:
+				attack()
+				return
+			
 			if velocity.x == 0:
 				sprite.stop()
 			else:
@@ -49,7 +63,40 @@ func _physics_process(delta: float) -> void:
 				velocity.x = speed
 				ancor.scale.x = -1
 	
+	# dont walk off edges
+	if not ray_cast_2d.is_colliding():
+		velocity.x = 0
+	
 	move_and_slide()
+
+
+func attack() -> void:
+	attack_cooldown.start()
+	state = ATTACK
+	
+	velocity = Vector2.ZERO
+	
+	sprite.stop()
+	sprite.animation_finished.connect(back_to_walk)
+	sprite.play("attack")
+	
+	attack_sound_timer.start()
+
+
+func back_to_walk() -> void:
+	sprite.animation_finished.disconnect(back_to_walk)
+	
+	if state == DEAD:
+		return
+	
+	state = WALK
+	
+	if player_in_attack_range:
+		player.hurt(damage)
+
+
+func play_attack_sound() -> void:
+	snd_attack.play()
 
 
 func hurt(amount: int) -> void:
@@ -61,10 +108,10 @@ func hurt(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		state = DEAD
+		velocity.x = 0
 		sprite.stop()
 		sprite.animation_finished.connect(remove)
 		sprite.play("death")
-		return
 	
 	sprite.modulate = Color(1.0, 0.0, 0.0)
 	
@@ -75,3 +122,13 @@ func hurt(amount: int) -> void:
 func remove() -> void:
 	died.emit()
 	queue_free()
+
+
+func on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player_in_attack_range = true
+
+
+func on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Player:
+		player_in_attack_range = false

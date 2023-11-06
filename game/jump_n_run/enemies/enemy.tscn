@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cmdj5ha1ms6me"]
+[gd_scene load_steps=26 format=3 uid="uid://cmdj5ha1ms6me"]
 
 [ext_resource type="Script" path="res://game/jump_n_run/enemies/enemy.gd" id="1_sq44j"]
 [ext_resource type="Texture2D" uid="uid://badvt4um8x5wg" path="res://assets/sprites/Jump n Run/enemy1/enemy1attack.png" id="2_bsbth"]
 [ext_resource type="Texture2D" uid="uid://d0qjqe3bae4kr" path="res://assets/sprites/Jump n Run/enemy1/enemy1death.png" id="3_tk1nv"]
 [ext_resource type="Texture2D" uid="uid://dinc66r70iq4q" path="res://assets/sprites/Jump n Run/enemy1/enemy1walk.png" id="4_tw1xt"]
+[ext_resource type="AudioStream" uid="uid://c7yfed82wyilo" path="res://assets/sounds/whip01-6952.wav" id="5_tsqbl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tihhm"]
 height = 38.0
@@ -146,6 +147,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5e5"]
+size = Vector2(27, 38)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_sq44j")
@@ -160,10 +162,27 @@ shape = SubResource("CapsuleShape2D_tihhm")
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_jwe5j")
 animation = &"attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="Ancor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ancor/Area2D"]
-position = Vector2(-11, -18)
+position = Vector2(-7.5, -20)
 shape = SubResource("RectangleShape2D_ca5e5")
 debug_color = Color(0.913725, 0.270588, 0.301961, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Ancor"]
+position = Vector2(-13, -8)
+target_position = Vector2(0, 14)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AttackSound" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="snd_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tsqbl")

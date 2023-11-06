@@ -17,8 +17,9 @@ func show_healthbar() -> void:
 	$"../CanvasLayer/Healtbar".show()
 
 
-func dialogic_signal(name: String) -> void:
-	if name == "fade":
+func dialogic_signal(signal_name: String) -> void:
+	if signal_name == "fade":
 		Bgm.fade_in(load("res://assets/sounds/bittersweet-eerie-horror-vocals-the-siren.ogg"), 1.0)
 		var tween := create_tween()
 		tween.tween_property($ColorRect, "modulate", Color(0.0, 0.0, 0.0, 0.0), 3.0)
+		tween.tween_callback(func(): $ColorRect.queue_free())

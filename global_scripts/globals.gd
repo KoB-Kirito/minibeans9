@@ -2,6 +2,8 @@ extends Node
 # global data
 
 
+var player_dead: bool = false
+
 ### pause while dialog is shown
 
 var paused: bool = false

@@ -50,14 +50,29 @@ func update_facing_direction() -> void:
 
 
 func hurt(amount: int) -> void:
+	if health <= 0:
+		return
+	
 	print("player hurt for ", amount)
 	
 	health -= amount
 	Events.healthchanged.emit(health)
 	
-	animation_tree.active = false
-	animation_player.play("hurt", transformed)
-	animation_player.animation_finished.connect(func(name): animation_tree.active = true, CONNECT_ONE_SHOT)
+	%snd_hit.play()
+	
+	if health <= 0:
+		$StateMachine.change_state(%Dead)
+		return
+	
+	# simple red flash animation
+	sprite.modulate = Color(1.0, 0.0, 0.0)
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 1.0), 0.5)
+	
+	# buggy, replaced with red flash for now
+	#animation_tree.active = false
+	#animation_player.play("hurt", transformed)
+	#animation_player.animation_finished.connect(func(name): animation_tree.active = true, CONNECT_ONE_SHOT)
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
