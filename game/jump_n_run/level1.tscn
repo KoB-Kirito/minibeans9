@@ -403,7 +403,7 @@ size = Vector2(20, 94)
 size = Vector2(90, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjpx"]
-size = Vector2(150, 20)
+size = Vector2(308, 20)
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("player", "boss")]
 script = ExtResource("1_76eh7")
@@ -494,6 +494,7 @@ script = ExtResource("10_pc7px")
 position = Vector2(12111, 171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossCutscene/Area2D"]
+position = Vector2(79, 0)
 shape = SubResource("RectangleShape2D_qyjpx")
 
 [node name="Boss" parent="." instance=ExtResource("11_g6rhg")]
